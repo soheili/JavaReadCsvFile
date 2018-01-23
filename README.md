@@ -1,4 +1,4 @@
-# Java_SampleCode15
+# JavaSampleCode15
 csvファイルの読み込み
 
 #### 処理
