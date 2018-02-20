@@ -6,14 +6,35 @@ csv形式の入力ファイルをカンマ区切りで取り込み、出力し�
 
 ## コード
 ```
-public class sample3 {
-  public static void main(String[] args) {
-    for(int seireki = 1926; seireki <= 1935; seireki++) {
-      System.out.print("西暦" + seireki + "年は");
-      int syowa = seireki - 1925;
-      System.out.println("昭和" + syowa + "年です");
-    }
-  }
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class sample15 {
+
+	public static void main(String[] args) {
+		try {
+		      File f = new File("csv/sample.csv");
+		      BufferedReader br = new BufferedReader(new FileReader(f));
+
+		      String line;
+		      // 1行ずつCSVファイルを読み込む
+		      while ((line = br.readLine()) != null) {
+		        String[] data = line.split(",");
+
+		        for (String elem : data) {
+		          System.out.println(elem);
+		        }
+		      }
+		      br.close();
+
+		    } catch (IOException e) {
+		      System.out.println(e);
+		    }
+
+	}
+
 }
 ```
 
