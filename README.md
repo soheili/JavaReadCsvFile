@@ -15,23 +15,23 @@ public class Readcsv {
 
 	public static void main(String[] args) {
 		try {
-		      File f = new File("csv/sample.csv");
-		      BufferedReader br = new BufferedReader(new FileReader(f));
+			File f = new File("csv/sample.csv");
+		      	BufferedReader br = new BufferedReader(new FileReader(f));
 
-		      String line;
-		      // 1行ずつCSVファイルを読み込む
-		      while ((line = br.readLine()) != null) {
-		        String[] data = line.split(",");
+		      	String line;
+		      	// 1行ずつCSVファイルを読み込む
+		      	while ((line = br.readLine()) != null) {
+		        	String[] data = line.split(",");
 
-		        for (String elem : data) {
-		          System.out.println(elem);
-		        }
-		      }
-		      br.close();
+		        	for (String elem : data) {
+		          		System.out.println(elem);
+		        	}
+		      	}
+		      	br.close();
 
-		    } catch (IOException e) {
-		      System.out.println(e);
-		    }
+		} catch (IOException e) {
+		      	System.out.println(e);
+		}
 
 	}
 
